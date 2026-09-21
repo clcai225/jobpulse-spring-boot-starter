@@ -6,6 +6,8 @@ run, and reported with success/failure status, duration, and error details.
 
 No curl commands. No ping URLs to paste. Zero code changes.
 
+> 👀 **Join the beta and lock in 30% off for life:** [jobpulse.clcai.cn](https://jobpulse.clcai.cn)
+
 ## Quick start
 
 ```xml
