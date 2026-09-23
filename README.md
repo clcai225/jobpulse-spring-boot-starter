@@ -67,12 +67,28 @@ timing, and error classes. Your business data does not.
 - Spring Boot 3.x
 - A `TaskScheduler` bean (Spring Boot provides one automatically)
 
+## Dashboard & Alerting
+
+Once your jobs are reporting, view them at:
+`https://jobpulse.clcai.cn/v1/dashboard`
+
+Enter your ingest token to see all tracked jobs, recent executions, and failures.
+
+Set up webhook alerts so you get notified the moment a job fails (deduplicated per 30 minutes):
+
+``bash
+curl -X POST https://jobpulse.clcai.cn/v1/alerts/config \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"app":"my-app","env":"prod","webhookUrl":"https://hooks.slack.com/..."}'
+``n
 ## Roadmap
 
 - Quartz job auto-discovery
-- Hosted dashboard with silence detection and escalating alerts
-- Self-hosted dashboard option
+- Email alerts
+- Silence detection (notify when a job stops reporting)
 - Micrometer metrics
+- Self-hosted dashboard option
 
 ## License
 
