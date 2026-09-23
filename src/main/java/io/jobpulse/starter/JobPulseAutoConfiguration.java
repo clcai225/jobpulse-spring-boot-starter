@@ -14,7 +14,7 @@ public class JobPulseAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(JobPulseReporter.class)
-    public HttpJobPulseReporter jobPulseReporter(JobPulseProperties properties, Environment environment) {
+    public static HttpJobPulseReporter jobPulseReporter(JobPulseProperties properties, Environment environment) {
         if (properties.getAppName() == null || properties.getAppName().isBlank()) {
             properties.setAppName(environment.getProperty("spring.application.name", "unknown"));
         }
